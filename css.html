@@ -11,27 +11,58 @@
 
   gtag('config', 'G-V9PM6YTJEV');
 </script>
+<!-- Google tag (gtag.js) -->
 
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>CSS</title>
+  <style>
+    /* <head> 태그 내부에 <style> 태그를 사용,
+    css 문법에 따른 스타일을 적용한다는 것을 HTML 에게 알려준다 
+    선택자, selector // ex) a {}
+    선택자에서 지정될 효과를 효과 또는 디컬러레이션(선언)이라고 한다 ex) color:black
+    여기는 스타일 태그
+    아래 <li><a.....> 부분은 스타일 속성
+    */
+    a {
+      color:black;
+      text-decoration: none; /* 텍스트에 적용할 효과 */
+    }
+    h1{
+      font-size:45px;  /* 텍스트의 폰트 사이즈 */
+      text-align:center; /* 텍스트의 위치 */
+    }
+
+
+  </style>
 </head>
 <body>
   <h1><a href="index.html">WEB</a></h1>
   <ol>
     <li><a href="html.html">HTML</a></li>
-    <li><a href="css.html">CSS</a></li>
+    <li><a href="css.html" style="color:red; text-decoration:underline;">CSS</a></li>
     <li><a href="javascript.html">JavaScript</a></li>
+
+  <!-- <h1><a href="index.html">WEB</a></h1>
+  <ol>
+    <li><a href="html.html">HTML</a></li>
+    <li><a href="css.html">CSS</a></li>
+    <li><a href="javascript.html">JavaScript</a></li> -->
+    <!-- 
+      초창기 폰트 컬러를 바꾸기 위한 태그 (현재는 사용하지 않음)
+      <font color="red"></font>
+      예시) <li><a href="javascript.html"><font color="red">JavaScript</font></a></li> 
+    -->
   </ol>
   <h2>CSS</h2>
   <h3>설명</h3>
   <p>
     종속형 시트 또는 캐스케이딩 스타일 시트는<br> 마크업 언어가
-     실제 표시되는 방법을 기술하는 스타일 언어로,
-      HTML과 XHTML에 주로 쓰이며, XML에서도 사용할 수 있다.<br>
-       W3C의 표준이고, 레이아웃과 스타일을 정의할 때의 자유도가 높다.<br>
-        기본 파일명은 style.css이다.<br>
+    실제 표시되는 방법을 기술하는 스타일 언어로,
+    HTML과 XHTML에 주로 쓰이며, XML에서도 사용할 수 있다.<br>
+    W3C의 표준이고, 레이아웃과 스타일을 정의할 때의 자유도가 높다.<br>
+    기본 파일명은 style.css이다.<br>
   </p>
 </body>
 </html>
