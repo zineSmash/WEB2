@@ -31,7 +31,19 @@
     }
     h1{
       font-size:45px;  /* 텍스트의 폰트 사이즈 */
-      text-align:center; /* 텍스트의 위치 */
+      /*text-align:center; /* 텍스트의 위치 */
+      border-width:5px;
+      border-color:red;
+      border-style:solid;
+      /* display: inline; */
+    }
+    
+    h5{
+      border:5px solid red;
+      padding:20px;
+      margin:20px;
+      display:block;
+      width:200px;
     }
 
 
@@ -64,5 +76,121 @@
     W3C의 표준이고, 레이아웃과 스타일을 정의할 때의 자유도가 높다.<br>
     기본 파일명은 style.css이다.<br>
   </p>
+  
+  <h3>웹페이지에 CSS를 삽입하는 2가지 방법</h3>
+  <ul>  
+    <li><strong>스타일 태그</strong></li>
+    &lt;head&gt; 태그 내에 &lt;style&gt; &lt;/style&gt; 태그를 삽입하여 &lt;style&gt; 태그 내에 선택자와 속성을 선언해 사용.<br>
+    &lt;style&gt; 태그 내에 "a {}" 와 같은 선택자와 선택자 내에 color:red; 와 같은 속성값을 넣어준다.<br>
+    이런 식으로 써준다.<br>
+    &lt;style&gt;<br>
+      a {<br>
+         color:black;<br>  
+         text-decoration: none;<br>
+      }<br>
+    &lt;/style&gt;<br>
+    스타일 태그를 이렇게 작성해두면 &lt;body&gt; 태그 내에서 &lt;a&gt; 태그를 사용한 텍스트는 모두 해당 속성이 적용된다.<br>
+    <br><br>
+    <li><strong>스타일 속성</strong></li>
+    본문 내용에 &lt;a&gt; 태그를 사용하여 효과를 준다.<br>
+    아래와 같이 특정 글자를 빨간색으로 표시를 한다면,<br>
+    css <a style="color:red;">문법</a> 연습<br>
+    이렇게 쓴다.<br>
+    <strong>css &lt;a style="color:red;"&gt;문법&lt;/a&gt; 연습</strong><br>
+    여기다 밑줄을 긋고 싶다?<br>
+    스타일 속성 내에 이것을 추가하자 (text-decoration: underline;)<br>
+    <strong>css &lt;a style="color:red;text-decoration: underline;"&gt;문법&lt;/a&gt; 연습</strong><br>
+    아래처럼 문법이라는 글씨가 빨간색에, 밑줄까지 그어진 것을 볼 수 있다.<br>
+    css <a style="color:red;text-decoration: underline;">문법</a> 연습<br>
+    <br><br>
+    <li><strong>추가설명</strong></li>
+    그리고 본문의 스타일 속성과 스타일 태그에 있는 속성이 중복일 경우 스타일 속성을 우선시 한다.<br>
+    스타일 태그에서 텍스트의 색상을 검정으로 해놓아도, 스타일 속성에서 빨강으로 적용하면 해당 텍스트는 빨강으로 표시된다.<br>
+    현재 페이지는 스타일 태그를 통해 텍스트가 검정으로 설정되어 모든 글자가 검정으로 보이게 되어있다.<br>
+    하지만 위에서 확인할 수 있듯이 스타일 속성을 적용한 텍스트는 빨강으로 보이는 것을 확인할 수 있다.<br>
+  </ul>
+
+<h3>CSS box model 소개 <a href="https://opentutorials.org/course/3086/18319" target="_blank"
+  title="생활코딩_CSS 박스모델" style="text-decoration: underline;">(생활코딩 링크)</a></h3>
+  <h4>태그별 박스 모델</h4>
+  아래와 같이 &lt;head&gt; 태그에 넣어서 쓰거나,<br>
+  &lt;style&gt;<br>
+  h1 {<br>
+    border-width:5px;<br>
+    border-color:red;<br>
+    border-style:solid;<br>
+  }<br>
+  &lt;/style&gt;<br>
+  <h1>CSS-h1태그</h1>
+  
+  아래처럼 텍스트에 스타일 속성을 넣어서 쓰거나 할 수 있다.<br>
+  &lt;a style="border-width: 5px;border-color: red;border-style: solid;"&gt;CSS-일반텍스트&lt;/a&gt;<br>
+  <a style="border-width: 5px;border-color: red;border-style: solid;">CSS-일반텍스트</a><br>
+
+  <br>
+  여기서 알 수 있는 것은,<br>
+  &lt;h1&gt; 태그는 페이지의 가로너비 전체를 쓴다는 것과, &lt;a&gt; 태그는 적용되는 텍스트만큼만의 박스 공간을 쓴다는 것<br>
+
+  또한 display:inline 또는 display:block 이라는 속성으로 가로너비의 크기를 변경할 수 있다.<br>
+  이렇게 써보자.<br>
+  &lt;a style="border-width: 5px;border-color: red;border-style: solid; display:block;"&gt;CSS-일반텍스트&lt;/a&gt;<br>
+  <a style="border-width: 5px;border-color: red;border-style: solid; display:block;">CSS-일반텍스트</a>
+  <br>
+  이렇게도 써보자.<br>
+  &lt;h1 style="display:inline;border-width:2px;"&gt;CSS-h1태그&lt;/h1&gt;<br>
+  <h1 style="display:inline;border-width:2px;">CSS-h1태그</h1>
+  <br>
+  <br>
+  &lt;h1&gt; 태그처럼 페이지의 가로너비 전체를 쓰는 태그를 Block level element(==tag)<br>
+  &lt;a&gt; 태그처럼 적용되는 컨텐츠의 부피만큼만 쓰는 태그를 Inline element(==tag) 라고 한다.<br>
+  
+  아래의 스타일 코드를 줄여보자.<br><br>
+  &lt;style&gt;<br>
+  h1 {<br>
+    border-width:5px;<br>
+    border-color:red;<br>
+    border-style:solid;<br>
+  }<br>
+  &lt;/style&gt;<br><br>
+  위 코드를 이렇게 줄일 수 있다.<br><br>
+  &lt;style&gt;<br>
+  h1 {<br>
+    border:5px red solid;<br>
+  }<br>
+  &lt;/style&gt;<br><br>
+  순서에 상관없이 border 속성의 값을 넣어주면 적용된다.<br>
+  이렇게 넣어봤다.<br>
+  &lt;h1 style="display:inline;border:2px solid blue;"&gt;CSS-h1태그&lt;/h1&gt;
+  <h1 style="border:2px solid blue;">CSS-h1태그</h1>
+
+  &lt;h1&gt; 태그에 또 다른 속성을 넣어보자.<br>
+  위에서 박스의 테두리를 그렸는데, 아래의 속성값을 적용해서 테두리 주위의 공간 크기를 변경해보자.<br>
+  <ul>
+  <li>border</li>
+  <li>padding</li>
+  <li>margin</li>
+  <li>width</li>
+  <li>display</li>
+  </ul>
+  <br>
+  &lt;h5&gt; 태그에 적용해본다.<br>
+  <h5>h5 태그에 적용한 스타일 태그</h5>
+  적용한 스타일 태그의 속성값은 아래와 같다.<br><br>
+  h5{<br>
+    border:5px solid red;<br>
+    padding:20px;<br>
+    margin:20px;<br>
+    display:block;<br>
+    width:200px;<br>
+  }<br><br>
+  이 상태에서 브라우저에서 마우스 우클릭 후 '검사'라는 항목을 클릭하거나 'F12' 키를 눌러보자.<br>
+  <img src="Image/css1.png" width="600"><br>
+  <br>
+  아래와 같은 창이 활성화되는데, 요소 탭에서 &lt;h5&gt; 태그가 있는 부분을 클릭해보자.<br>
+  오른쪽에 해당 태그의 스타일 속성값이 어떻게 적용되어 있는지 항목별 값을 볼 수 있다.<br>
+  <img src="Image/css2.png" width="600"><br>
+
+
+  
 </body>
 </html>
