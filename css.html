@@ -3,6 +3,7 @@
 <head>
 
 <!-- Google tag (gtag.js) -->
+<!-- 구글애널리틱스용 스크립트 -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-V9PM6YTJEV"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -12,11 +13,13 @@
   gtag('config', 'G-V9PM6YTJEV');
 </script>
 <!-- Google tag (gtag.js) -->
+<!-- 구글애널리틱스용 스크립트 -->
 
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>CSS</title>
+  <link rel="stylesheet" href="style.css">
   <style>
     /* <head> 태그 내부에 <style> 태그를 사용,
     css 문법에 따른 스타일을 적용한다는 것을 HTML 에게 알려준다 
@@ -25,18 +28,6 @@
     여기는 스타일 태그
     아래 <li><a.....> 부분은 스타일 속성
     */
-    a {
-      color:black;
-      text-decoration: none; /* 텍스트에 적용할 효과 */
-    }
-    h1{
-      font-size:45px;  /* 텍스트의 폰트 사이즈 */
-      /*text-align:center; /* 텍스트의 위치 */
-      border-width:5px;
-      border-color:red;
-      border-style:solid;
-      /* display: inline; */
-    }
     
     h5{
       border:5px solid red;
@@ -46,11 +37,26 @@
       width:200px;
     }
 
+    div{
+      border:5px solid grey;
+    }
+
+    #grid1{
+      border:5px solid pink;
+    }
+
+    #grid2{
+      border:5px solid pink;
+      display: grid;
+      grid-template-columns: 150px 1fr;
+    }
 
   </style>
 </head>
 <body>
+  <p>2023.04.04 ~ 2023.04.05 작성</p>
   <h1><a href="index.html">WEB</a></h1>
+  <div id="grid">
   <ol>
     <li><a href="html.html">HTML</a></li>
     <li><a href="css.html" style="color:red; text-decoration:underline;">CSS</a></li>
@@ -67,6 +73,7 @@
       예시) <li><a href="javascript.html"><font color="red">JavaScript</font></a></li> 
     -->
   </ol>
+  <div id="article">
   <h2>CSS</h2>
   <h3>설명</h3>
   <p>
@@ -189,8 +196,120 @@
   아래와 같은 창이 활성화되는데, 요소 탭에서 &lt;h5&gt; 태그가 있는 부분을 클릭해보자.<br>
   오른쪽에 해당 태그의 스타일 속성값이 어떻게 적용되어 있는지 항목별 값을 볼 수 있다.<br>
   <img src="Image/css2.png" width="600"><br>
+  <p>~2023.04.05 작성</p>
 
-
+  <p>2023.04.06 시작</p>
+  <h3>그리드 <a href="https://opentutorials.org/course/3086/18322" target="_blank"
+  title="생활코딩 오픈튜토리얼 페이지" style="font-size:15px; text-decoration: underline; color:blue">(링크)</a></h3>
   
+  디자인이라는 목적을 위해서 어떠한 의미도 가지지 않는 태그가 필요할 때가 있다.<br>
+  그럴 때 사용하는 것이 &lt;div&gt; 라는 태그이다.<br>
+  또한 비슷한 태그로는 &lt;span&gt; 이라는 것이 있다.<br>
+  둘의 차이는 &lt;div&gt; 태그는 block level element, &lt;span&gt; 태그는 inline element 의 속성을 가진다는 점이다.<br>
+  block level element가 필요하냐, inline element가 필요하냐에 따라 목적에 맞게 사용하자.<br>
+  <br>
+  &lt;div&gt; 태그를 사용해본다.<br> 
+  우선 그리드를 사용하기 위해서는 &lt;div&gt; 의 부피감을 확인할 필요가 있다.<br>
+  &lt;head&gt; 태그에 &lt;style&gt; 태그로 border 속성을 추가해보자.<br>
+  코드는 아래와 같다.<br>
+
+  &lt;style&gt;<br>
+    div{<br>
+      border:5px solid grey;<br>
+    }<br>
+  &lt;/style&gt;<br>
+
+  &lt;body&gt;<br>
+  &lt;div&gt;NAVIGATION&lt;/div&gt;<br>
+  &lt;div&gt;ARTICLE&lt;/div&gt;<br>
+  &lt;/body&gt;<br>
+  <br>
+  아래와 같이 박스가 그려진 텍스트 2개를 볼 수 있다.<br>
+  
+  <div>NAVIGATION</div>
+  <div>ARTICLE</div>
+  <br>
+  이제 그리드를 사용해서 변화를 줄 차례이다.<br>
+  아래와 같이 &lt;body&gt; 태그 내 본문의 내용을 수정해보자.<br>
+  본문 텍스트 2줄에 대한 부모 태그를 만들어주는 것이다.<br>
+  <br>
+  &lt;body&gt;<br>
+  &lt;div id="grid"&gt;<br>
+  &lt;div&gt;NAVIGATION&lt;/div&gt;<br>
+  &lt;div&gt;ARTICLE&lt;/div&gt;<br>
+  &lt;/div&gt;<br>
+  &lt;/body&gt;<br><br>
+
+  그리고 id="grid" 의 속성을 스타일 태그에 추가하자.<br><br>
+  &lt;style&gt;<br>
+  div{<br>
+    border:5px solid grey;<br>
+  }<br>
+  #grid{<br>
+    border:5px solid pink;<br>
+  }<br>
+&lt;/style&gt;<br><br>
+
+새로 만든 &lt;div&gt; 태그 아래에 있는 태그들을 나란히 배치하고 싶다면, 이렇게 부모 태그를 만들어서 그 안에서 디자인을 적용해주는 것이다.<br>
+위 코드를 적용해보자.<br>
+
+<div id="grid1">
+<div>NAVIGATION</div>
+<div>ARTICLE</div>
+</div>
+
+두개의 텍스트가 하나의 그룹으로 묶인 것을 확인할 수 있다.<br>
+이렇게 묶인 그룹의 디자인을 변경하기 위해서는 id="grid" 의 속성값을 추가해주면 된다.<br>
+#grid 를 수정해보자.<br><br>
+&lt;style&gt;<br>
+div{<br>
+  border:5px solid grey;<br>
+}<br>
+#grid{<br>
+  border:5px solid pink;<br>
+  display:grid;<br>
+  grid-template-columns:150px 1fr;<br>
+}<br>
+&lt;/style&gt;<br><br>
+<div id="grid2">
+  <div>NAVIGATION</div>
+  <div>ARTICLE</div>
+</div>
+세로로 나열되어 있던 텍스트 2개가 가로로 나열된 것을 확인할 수 있다.<br>
+이 상태에서 브라우저의 크기를 조절해보면 ARTICLE 쪽의 박스 크기가 변경되는 것도 확인해보자.<br>
+grid-template-columns:150px 1fr; 에서<br>
+<ul>
+<li>grid-template-columns는 배치 형태를</li>
+<li>150px 는 첫번째 요소의 가로 너비</li>
+<li>1fr 은 두번째 요소의 가로 너비를 의미한다.</li>
+<li>150px 는 크기를 150px 로 고정하며, 1fr 은 나머지 공간을 브라우저의 크기에 맞게 변경된다.</li>
+<li>만약 1fr 2fr 이라고 입력했다면 브라우저의 가로너비를 3등분해서 첫번째 요소는 1/3의 공간을, 두번째 요소는 2/3의 공간을 배분해서 사용한다.</li>
+</ul>
+
+ARTICLE 이라고 써놓은 부분을 다른 텍스트로 채워보자.<br>
+<div id="grid2">
+  <div>NAVIGATION</div>
+  <div>종속형 시트 또는 캐스케이딩 스타일 시트는 마크업 언어가
+    실제 표시되는 방법을 기술하는 스타일 언어로,
+    HTML과 XHTML에 주로 쓰이며, XML에서도 사용할 수 있다.
+    W3C의 표준이고, 레이아웃과 스타일을 정의할 때의 자유도가 높다.
+    기본 파일명은 style.css이다.</div>
+</div>
+텍스트양에 따라 박스의 크기도 바뀐 것을 볼 수 있다.<br>
+속성값과 본문을 변경해보면서 <strong>그리드</strong>라는 것에 익숙해지도록 하자.<br>
+<br>
+
+이러한 스타일 속성들을 브라우저에서 지원하는지 확인할 수 있는 사이트가 있다.<br>
+<a href="https://caniuse.com/" target="_blank" title="caniuse home"
+style="text-decoration:underline; color:blue;">caniuse.com</a><br><br>
+여기서 앞서 사용했던 태그와 속성을 검색해보면, 어떤 브라우저에서 실행이 가능한지, 얼마의 사람들이 이용할 수 있는지 등을 확인할 수 있다.<br>
+
+<h3>반응형 디자인</h3>
+반응형 디자인 외 이후의의 것은 아래의 페이지에 기록한다.<br><br>
+<a href="css2.html" style="text-decoration: underline; color:blue">반응형 디자인</a>
+
+</div>
+</div>
+
 </body>
 </html>
