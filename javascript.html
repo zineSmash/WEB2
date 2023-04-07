@@ -19,17 +19,86 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>JavaScript</title>
   <link rel="stylesheet" href="style.css">
+  <style>
+    .textbold{
+      color:pink;
+    }
+  </style>
+
+<script>
+  function LinksSetColor(color){
+    var alist = document.querySelectorAll('a');
+      var i=0;
+      while(i<alist.length){
+        alist[i].style.color=color;
+        i++;
+      }
+  }
+  function BodySetColor(target, color){
+    target.style.color=color;
+  }
+  function BodySetBackgroundColor(target, color){
+    target.style.backgroundColor=color;
+  }
+  function nightdayHandler(self){
+    var target = document.querySelector('body');
+    if(self.value==='day'){  
+      BodySetBackgroundColor(target, 'white');
+      BodySetColor(target,'black');
+      self.value='night';
+
+      LinksSetColor('black');
+      document.querySelector("h3").style.bordercolor ='black';
+
+    }
+    else{
+      BodySetBackgroundColor(target, 'black');;
+      BodySetColor(target,'white');
+      self.value='day';
+
+      LinksSetColor('powderblue');
+      document.querySelector("h3").style.bordercolor ='white';
+    }
+  }
+  </script>
 
 </head>
 <body>
   <h1><a href="index.html">WEB</a></h1>
-  <div id="grid">
+<div id="grid">
   <ol>
     <li><a href="html.html">HTML</a></li>
     <li><a href="css.html">CSS</a></li>
     <li><a href="javascript.html" style="color:red; text-decoration:underline;">JavaScript</a></li>
   </ol>
-  <div id="article">
+<div id="article">
+    <input id="night_day" type="button" value="night" onclick="
+    var target = document.querySelector('body');
+    if(this.value==='day'){  
+      target.style.backgroundColor='white';
+      target.style.color='black';
+      this.value='night';
+  
+      var alist = document.querySelectorAll('a');
+      var i=0;
+      while(i<alist.length){
+        alist[i].style.color='blue';
+        i++;
+      }
+    }
+    else{
+      target.style.backgroundColor='black';
+      target.style.color='white';
+      this.value='day';
+  
+      var alist = document.querySelectorAll('a');
+      var i=0;
+      while(i<alist.length){
+        alist[i].style.color='powderblue';
+        i++;
+      }
+    }
+    ">
   <h2>자바스크립트</h2>
   <h3>설명</h3>
   <!--  <p>태그는 단락태그</p> -->
@@ -140,11 +209,15 @@
       &lt;input type="text" onchange="alert('changed')"&gt;<br><br>
       <input type="text" onchange="alert('changed')">
       <br><br>
+
       아래는 onkeydown 속성. 효과는 직접 테스트해보자.<br><br>
+
       &lt;input type="text" onkeydown="alert('changed')"&gt;<br><br>
       <input type="text" onkeydown="alert('key down!')"><br><br>
+
       위와 같이 on으로 시작하는 속성을 이벤트라고 한다.<br><br>
       버튼을 하나 더 만들어서 다크모드를 실행해보자.<br><br>
+
       <input type="button" value="night" onclick="
       document.querySelector('body').style.backgroundColor='black';
       document.querySelector('body').style.color='white';">
@@ -156,11 +229,427 @@
       
     </a>
   </p>
-  <h3>~2023.04.06 여기까지.</h3>
-  <h3>2023.04.07 여기부터~</h3>
-  <h3>주간/야간 모드 만들어보기</h3>
+  <h3 style="background-color:deeppink">~2023.04.06 여기까지.</h3>
+  <h3 style="background-color:aquamarine">2023.04.07 여기부터~</h3>
+
+  <h3>CSS 기초 &lt;div&gt;</h3>
+  <a href="https://opentutorials.org/course/3085/18789" target="_blank"
+  title="생활코딩_CSS 기초" style="color:blue; text-decoration: underline;">CSS 기초</a><br><br>
+  <div>의미없는 태그 &lt;div&gt; </div>
+  <div>&lt;div&gt;태그는 block level element</div>
+  <span>inline element 로 사용하려면 &lt;span&gt;태그를 사용</span>
+  텍스트에 어떠한 속성을 넣어주기 위해 &lt;div/span&gt; 태그를 사용한다. (라고 이해했다.)<br>
+  <br>
+  <div>클래스의 사용<br>
+    &lt;head&gt; 태그 내에서 &lt;style&gt; 태그를 선언하고<br>
+    그 안에 아래와 같은 형식으로 클래스를 만들어준다.<br><br>
+
+    .textbold{<br>
+      color:pink;<br>
+    }<br><br>
+    {} 내에 필요한 속성을 작성하자.<br>
+    그리고 textbold 클래스를 적용할 텍스트를 아래와 같은 형식으로 작성해준다.<br><br>
+
+    &lt;div(span) class="textbold"&gt;클래스&lt;/div&gt;<br>
+    결과는 아래와 같다.<br><br>
+
+    <div class="textbold">클래스</div><br>
+  </div>
+  <div>아이디의 사용<br>
+    스타일 태그에서 #textbold 와 같은 형태로 # 을 붙여서 선택자를 만들어준다.<br>
+    클래스 : 그룹핑 (학교에서의 반과 같은 역할 / 포괄적), id : 특정 한가지 대상을 식별 (학번 같은 역할 / 특정 대상만 적용)<br>
+    스타일 속성에서 클래스는 여러 번 사용 가능하지만, id 는 해당 페이지 내에서 딱 한번만 사용 가능하다.<br>
+    클래스가 적용된 범위에 id 를 적용하면 해당 부분만 예외적으로 디자인을 변경할 수 있다.<br>
+    <ol style="border:none;">
+      <strong>우선순위</strong>
+      <li>id</li>
+      <li>class</li>
+      <li>tag</li>
+    </ol>
 
   </div>
+
+
+  <h3>주간/야간 모드 만들어보기</h3>
+  <a href="https://opentutorials.org/course/3085/18792" target="_blank"
+  title="생활코딩_제어할 태그 선택하기" style="color:blue; text-decoration: underline;">제어할 태그 선택하기</a>
+  <br>  <br>
+  <input type="button" value="night" onclick="
+  document.querySelector('body').style.backgroundColor='black';
+  document.querySelector('body').style.color='white';
+  ">
+  <input type="button" value="day" onclick="
+    document.querySelector('body').style.backgroundColor='white';
+    document.querySelector('body').style.color='black';
+  ">
+  <br><br>
+<p>input 태그에 타입을 버튼으로 하면 페이지에 버튼이 생성된다.<br><br>
+  &lt;input type="button"&gt;<br>
+  <input type="button">
+  <br><br>
+  아무것도 없는 버튼이 만들어지는데, 여기에 글자를 넣으려면 value 속성을, 버튼 클릭에 대한 반응을 넣으려면 onclick 속성을 추가해준다.<br><br>
+  &lt;input type="button" value="night" onclick=""&gt;<br><br>
+  글자가 추가되었지만 버튼을 눌러도 여전히 특별한 동작은 없다.<br>
+  이제 onclick=""속성에 JavaScript 로 원하는 동작의 코드를 작성해주면 된다.<br>
+  야간모드를 만들기 위해 배경을 검정으로, 텍스트를 흰색으로 변경해보자.<br>
+  아래와 같이 코드를 써준다.<br><br>
+  &lt;input type="button" value="night" onclick="
+  document.querySelector('body').style.backgroundColor='black';
+  document.querySelector('body').style.color='white';
+  "&gt;
+  <br><br>
+  JavaScript 코드를 쓰려면 document 를 쓰고,  동작을 적용할 태그를 반영 시켜준다.<br><br>
+  document.querySelector('body')<br><br>
+  그리고 해당 태그의 스타일의 백그라운드 컬러를 검정으로 적용 시켜준다. (끝에는 세미콜론)<br><br>
+  document.querySelector('body').style.backgroundColor='black';<br><br>
+  같은 방식으로, 텍스트의 컬러는 흰색으로 적용 시킨다.<br><br>
+  document.querySelector('body').style.color='white';<br><br>
+
+  적용해보면 아래와 같은 버튼이 생성되고, 버튼을 누르면 다크 모드가 발동(!!)된다.<br>
+  다크모드만 있으면 심심하니까, 일반모드 버튼도 같이 만들어주자.<br>
+  앞의 코드에서 value를 day로, 색상을 white, black 으로 바꿔주면 된다.
+  <br><br>
+  &lt;input type="button" value="day" onclick="
+  document.querySelector('body').style.backgroundColor='white';
+  document.querySelector('body').style.color='black';
+  "&gt;
+  <br><br>
+</p>
+
+  <input type="button" value="night" onclick="
+  document.querySelector('body').style.backgroundColor='black';
+  document.querySelector('body').style.color='white';">
+  <input type="button" value="day" onclick="
+  document.querySelector('body').style.backgroundColor='white';
+  document.querySelector('body').style.color='black';">
+
+<h3>비교연산자와 boolean 데이터 타입</h3>
+<a href="https://opentutorials.org/course/3085/18798" target="_blank"
+title="생활코딩_비교연산자&boolean" style="color:blue; text-decoration: underline;">비교 연산자와 Boolean 데이터 타입</a><br><br>
+<div style="font-size: small;">
+  비교연산자<br>
+  <ul>
+    <li>===</li>
+    좌우의 값이 같은지를 검사 후 같으면 true, 다르면 false 가 출력된다.<br>
+    document.write(1===1) / document.write(1===2) 로 확인해보자.<br><br>
+    <script>
+      document.write("document.write(1===1) : ");
+      document.write(1===1,"<br>");
+      document.write("document.write(1===2) : ");
+      document.write(1===2);
+    </script><br><br>
+    이렇게 비교값을 true, false (참/거짓)으로 출력해주는 이 데이터를 boolean, bool 이라고 한다.<br><br>
+    <li>&lt;</li>
+    오른쪽의 값이 왼쪽보다 큰지를 검사 후 크면 true, 작으면 false 가 출력된다.<br>
+    document.write(1&lt;1) / document.write(1&lt;2) 로 확인해보자.<br><br>
+    <script>
+      document.write("document.write(1<1) : ");
+      document.write(1<1,"<br>");
+      document.write("document.write(1<2) : ");
+      document.write(1<2);
+    </script><br><br>
+    <li>&gt;</li>
+    위 비교연산자와 반대다.<br>
+    왼쪽의 값이 오른쪽보다 큰지를 검사한다.<br>
+    연습은 생략.
+  </ul>
+</div>
+
+<h3>조건문</h3>
+<a href="https://opentutorials.org/course/3085/18800" target="_blank"
+title="생활코딩_조건문" style="color:blue; text-decoration: underline;">조건문</a><br><br>
+
+if-else
+아는 거니까 설명 생략, 내용이 알고 싶다면 위 링크를 타고 강의 영상을 보자.<br><br>
+
+
+<h3>조건문의 구현</h3>
+<p>
+  <input id="night_day" type="button" value="night" onclick="
+  if(this.value==='day'){  
+    document.querySelector('body').style.backgroundColor='white';
+    document.querySelector('body').style.color='black';
+    this.value='night';
+  }
+  else{
+    document.querySelector('body').style.backgroundColor='black';
+    document.querySelector('body').style.color='white';
+    this.value='day';
+  }
+  ">
+  <br><br>
+  예시 코드<br><br>
+  &lt;input type="button" value="night" onclick="<br>
+  if(value==='day'){  <br>
+    document.querySelector('body').style.backgroundColor='white';<br>
+    document.querySelector('body').style.color='black';<br>
+    this.value='night';<br>
+  }<br>
+  else{<br>
+    document.querySelector('body').style.backgroundColor='black';<br>
+    document.querySelector('body').style.color='white';<br>
+    this.value='day';<br>
+  }<br>
+  "&gt;
+  <br><br>
+
+  상세 내용은 위 링크를 통해 강의 영상을 참고. (갈수록 쓰기가 귀찮아진다....)<br>
+</p>
+
+<h3>리팩토링</h3>
+<a href="https://opentutorials.org/course/3085/18801" target="_blank"
+title="생활코딩_리팩토링" style="color:blue; text-decoration: underline;">리팩토링</a><br><br>
+<p>
+  작성된 코드를 간결하고 추가/수정이 쉽도록 정리해주는 작업<br>
+  아래처럼 코드를 변경해주자.<br><br>
+
+  &lt;input id="night_day" type="button" value="night" onclick="<br>
+  var target = document.querySelector('body');<br>
+  if(this.value==='day'){  <br>
+    target.style.backgroundColor='white';<br>
+    target.style.color='black';<br>
+    this.value='night';<br>
+  }<br>
+  else{<br>
+    target.style.backgroundColor='black';<br>
+    target.style.color='white';<br>
+    this.value='day';<br>
+  }<br>
+  "&gt;<br>
+
+  <input id="night_day" type="button" value="night" onclick="
+  var target = document.querySelector('body');
+  if(this.value==='day'){  
+    target.style.backgroundColor='white';
+    target.style.color='black';
+    this.value='night';
+  }
+  else{
+    target.style.backgroundColor='black';
+    target.style.color='white';
+    this.value='day';
+  }
+  ">
+  <br><br>
+  크게 바뀐 건 없지만, 이렇게 변수를 할당해줌으로써 후에 값을 변경할 일이 생긴다면 조금 더 수월하게 작업을 진행할 수 있게 된다.<br>
+  이러한 형태로 중복적인 것을 조금 더 편하게 작업할 수 있게 하는 것이 리팩토링이다.<br>
+  코드 작성이 끝나고, 동작이 정상적으로 실행된다면 리팩토링하는 습관을 들이자.<br>
+</p>
+
+<h3>배열</h3>
+<a href="https://opentutorials.org/course/3085/18825"target="_blank"
+title="생활코딩_배열" style="color:blue; text-decoration: underline;">배열</a><br><br>
+<p>
+  <h4>syntax</h4>
+  <script>
+    var coworkers = ["egoing", "leezche"];
+  </script>
+  <h4>get</h4>
+  <script>
+    document.write(coworkers[0],"<br>");
+    document.write(coworkers[1],"<br>");
+  </script>
+  <h4>add</h4>
+  <script>
+    coworkers.push("duru");
+    coworkers.push("taeho");
+  </script>
+  <h4>count</h4>
+  <script>
+    document.write(coworkers.length);
+  </script>
+</p>
+
+<h3>반복문</h3>
+<a href="https://opentutorials.org/course/3085/18827"target="_blank"
+title="생활코딩_반복문" style="color:blue; text-decoration: underline;">반복문</a><br><br>
+<p>
+  <h4>loop</h4>
+  <ul>
+  <script>
+    document.write('<li>1</li>');
+    var i = 0;
+    while(i<3){
+      document.write('<li>2</li>');
+      document.write('<li>3</li>');
+      i++;
+    }
+    document.write('<li>4</li>');
+  </script>
+  </ul>
+</p>
+
+<h3>배열과 반복문</h3>
+<a href="https://opentutorials.org/course/3085/18828"target="_blank"
+title="생활코딩_배열과 반복문" style="color:blue; text-decoration: underline;">배열과 반복문</a><br><br>
+<p>
+<h4>loop & array</h4>
+<script>
+  var coworkers = ["egoing", "leezche", "duru", "taeho"];
+</script>
+<ul>
+  <script>
+    var i=0;
+    while(i<coworkers.length){
+      document.write('<li>'+coworkers[i]+'</li>');
+      i++;
+    }
+</script>
+</ul>
+</p>
+
+<h3>배열과 반복문의 활용</h3>
+<a href="https://opentutorials.org/course/3085/18850"target="_blank"
+title="생활코딩_배열과 반복문의 활용" style="color:blue; text-decoration: underline;">배열과 반복문의 활용</a><br><br>
+<p>
+  <input id="night_day" type="button" value="night" onclick="
+  var target = document.querySelector('body');
+  if(this.value==='day'){  
+    target.style.backgroundColor='white';
+    target.style.color='black';
+    this.value='night';
+
+    var alist = document.querySelectorAll('a');
+    var i=0;
+    while(i<alist.length){
+      alist[i].style.color='blue';
+      i++;
+    }
+  }
+  else{
+    target.style.backgroundColor='black';
+    target.style.color='white';
+    this.value='day';
+
+    var alist = document.querySelectorAll('a');
+    var i=0;
+    while(i<alist.length){
+      alist[i].style.color='powderblue';
+      i++;
+    }
+  }
+  ">
+</p>
+
+<h3>함수</h3>
+<a href="https://opentutorials.org/course/3085/18851"target="_blank"
+title="생활코딩_함수" style="color:blue; text-decoration: underline;">함수</a><br><br>
+<p>
+<ul>
+  <script>
+    function two(){
+      document.write('<li>2-1</li>');
+      document.write('<li>2-2</li>');
+    }
+    document.write('<li>1</li>');
+    two();
+    document.write('<li>3</li>');
+    two();
+  </script>
+</ul>
+</p>
+
+<h3>함수의 활용</h3>
+<a href="https://opentutorials.org/course/3085/18883"target="_blank"
+title="생활코딩_함수의 활용" style="color:blue; text-decoration: underline;">함수의 활용</a><br><br>
+<p>
+리팩토링을 통해 앞서 만들었던 night_day 버튼의 코드를 수정해본다.<br><br>
+<input type="button" value="night" onclick="nightdayHandler(this);">  
+<br><br>
+&lt;script&gt;<br>
+  function nightdayHandler(self){<br>
+    var target = document.querySelector('body');<br>
+    if(self.value==='day'){  <br>
+      target.style.backgroundColor='white';<br>
+      target.style.color='black';<br>
+      self.value='night';<br>
+<br>
+      var alist = document.querySelectorAll('a');<br>
+      var i=0;<br>
+      while(i<alist.length){<br>
+        alist[i].style.color='blue';<br>
+        i++;<br>
+      }<br>
+<br>
+    }<br>
+    else{<br>
+      target.style.backgroundColor='black';<br>
+      target.style.color='white';<br>
+      self.value='day';<br>
+<br>
+      var alist = document.querySelectorAll('a');<br>
+      var i=0;<br>
+      while(i<alist.length){<br>
+        alist[i].style.color='powderblue';<br>
+        i++;<br>
+      }<br>
+    }<br>
+  }<br>
+  &lt;/script&gt;<br><br>
+  &lt;input type="button" value="night" onclick="nightdayHandler(this);"&gt;<br><br>
+
+  스크립트 태그 내에 함수를 만들어서 body 태그 내에 있는 버튼의 onclick 속성을 함수로 구현한다.<br>
+
+</p>
+
+<h3>객체예고</h3>
+<a href="https://opentutorials.org/course/3085/18884"target="_blank"
+title="생활코딩_객체예고" style="color:blue; text-decoration: underline;">객체예고</a><br><br>
+<p>
+  앞서 작성한 함수의 중복을 제거해보자.<br><br>
+  var alist = document.querySelectorAll('a');<br>
+  var i=0;<br>
+  while(i<alist.length){<br>
+    alist[i].style.color='powderblue';<br>
+    i++;<br>
+  }<br><br>
+  이 부분의 코드가 중복된다.<br>
+  함수로 만들어 분리시키자.<br><br>
+  function setColor(color){<br>
+    var alist = document.querySelectorAll('a');<br>
+    var i=0;<br>
+    while(i<alist.length){<br>
+      alist[i].style.color = color;<br>
+      i++;<br>
+    }<br>
+  }<br><br>
+  function setColor(color) 함수의 매개변수로 color 값을 전달해 텍스트의 색상을 변경할 수 있다.<br>
+  다시 버튼을 하나 만들고 방금 내용을 적용해보자.<br><br>
+
+  <input id="night_day" type="button" value="night" onclick="
+  nightdayHandler(this);
+  ">
+  <br><br>
+  그리고 함수를 몇개 더 만들어서 코드를 수정해주었다.<br>
+  그것까지 따라 쓰기는 귀찮으니까 영상을 보도록 하자.<br>
+  영상의 설명이 훨씬 자세하고 쉽고 재밌다.<br>
+</p>
+
+<h3>객체</h3>
+<a href="https://opentutorials.org/course/3085/18853"target="_blank"
+title="생활코딩_객체" style="color:blue; text-decoration: underline;">객체</a><br><br>
+<p>
+객체가 무엇인지 객체예고를 통해 알아보았으니 이제 적용할 차례.<br>
+역시나 자세한 것은 영상을 참고.<br>
+
+<script>
+  var coworkers = {
+    "programmer":"egoing",
+    "designer":"leezche"
+  };
+  document.write("programmer : " +coworkers.programmer + "<br>");
+  document.write("designer : " +coworkers.designer + "<br>");
+  coworkers.bookkeeper = "duru";
+  document.write("bookkeeper : " +coworkers.bookkeeper + "<br>");
+  // 키값에 띄어쓰기가 있는 경우 아래와 같이 추가, 출력할 수 있다
+  coworkers["data scientist"] = "taeho";
+  document.write("data scientist : " + coworkers["data scientist"]+"<br>");
+</script>
+</p>
+
+<h3 style="background-color:deeppink">~2023.04.07 여기까지.</h3>
+<h3 style="background-color:aquamarine">2023.04.08? 09? 10? 11? 여기부터~</h3>
   </div>
+</div>
 </body>
 </html>
