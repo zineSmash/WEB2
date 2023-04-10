@@ -1,4 +1,5 @@
 body{
+  padding-top:120px;
   margin:0;
 }
 h1{
@@ -24,6 +25,20 @@ a {
 }
 p {
   font-size: small;
+}
+header{
+  height:75px;
+  padding:1rem;
+  color:white;
+  background:teal;
+  font-weight:bold;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+
+  position:fixed;
+  top:0;
+  width:100%;
 }
 #grid{
   /* border:5px solid pink; */
