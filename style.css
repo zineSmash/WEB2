@@ -15,9 +15,11 @@ h3{
 }
 ol{
   border-right:1px solid grey;
-  width:100px;
-  margin:0;
-  padding:30px;
+  width:120px;
+  margin-left:10;
+  margin-top:0;
+  padding:20px;
+  
 }
 a {
   /* color:black; */
@@ -43,8 +45,9 @@ header{
 #grid{
   /* border:5px solid pink; */
   display: grid;
-  grid-template-columns: 150px 1fr;
-  margin-left: 5px;
+  grid-template-columns: 160px 1fr;
+  margin-left: 10px;
+  margin-right: 20px;
  }
 #grid #article{
   padding-left: 25px;
@@ -61,3 +64,5 @@ header{
     border-bottom:none;
   }
 }
+
+

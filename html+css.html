@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="icon.css">
+  <link rel="stylesheet" href="style.css">
+  <script src="colors.js"></script>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <title>Document</title>
+</head>
+<body>
+ 
+  <h1><a href="index.html">WEB</a></h1>
+  <div id="grid">
+    <ol>
+      <li><a href="html.html ">HTML</a></li>
+      <li><a href="css.html">CSS</a></li>
+      <li><a href="javascript.html">JavaScript</a></li>
+      <li><a href="html+css.html" style="color:red; text-decoration:underline;">HTML+CSS활용</a></li>
+    </ol>
+    <div id="article">
+      <h2>HTML + CSS 활용</h2>
+      <h3>움직이는 메뉴버튼 만들기</h3>
+      유튜브 "코남(코딩하는남자) / 움직이는 메뉴버튼 코딩하기 input:checked(checkbox)[HTML+CSS{코남}] 영상 참고<br><br>
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/IvXuk5Sh4GE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+      <br><br>
+      영상을 보고 만든 메뉴버튼은 아래와 같다. <br>
+      (아래 아이콘을 클릭해보자)<br><br>
+
+      <input type="checkbox" id="menuicon">
+      <label for="menuicon">
+        <span></span>
+        <span></span>
+        <span></span>
+      </label>
+      <br><br>
+      <h3>스르륵 나타나는 사이드메뉴 만들기</h3>
+      다음은 메뉴버튼을 클릭했을 때 사이드메뉴바가 나타나는 것을 적용해보자.<br>
+      유튜브 "코남(코딩하는남자) / 스르륵 나타나는 사이드메뉴 만들기 (스크립트 없이 HTML코딩강좌)" 영상 참고<br><br>
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/AcDKkaorPvU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+      <br><br>
+      영상을 보고 만든 내용을 아래 메뉴버튼을 클릭해서 확인해보자.<br><br>
+
+      <input type="checkbox" id="menuicon1">
+      <label for="menuicon1">
+        <span></span>
+        <span></span>
+        <span></span>
+      </label>
+      <div class="sidebar"></div>
+      <br><br><br><br>
+      
+      아래는 사이드메뉴 만들기<br>
+      https://www.youtube.com/watch?v=16Bj6aPi1A8&list=PL2vyqKNLXiUpl8AoOKI3rMrEzLGx_-1m2
+      <br><br>
+      참고 사이트 : <a href="https://blogpack.tistory.com/1018" target="_blank">링크</a>
+      <div class="menu">
+        <label for="expand-menu"><div>메뉴</div></label>
+        <input type="checkbox" id="expand-menu" name="expand-menu">
+        <ul>
+          <li><a href="#" class="item"><div>프로필</div></a></li>
+          <li><a href="#" class="item"><div>데이터사용량</div></a></li>
+          <li><a href="#" class="item"><div>내URL</div></a></li>
+          <li><a href="#" class="item"><div>구매내역</div></a></li>
+          <li><a href="#" class="item"><div>추천목록</div></a></li>
+          <li><a href="#" class="item"><div>설정</div></a></li>
+        </ul>
+      </div>
+
+
+    </div>
+  </div>
+</body>
+</html>
