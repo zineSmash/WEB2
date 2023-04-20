@@ -7,13 +7,14 @@
 
   <link rel="stylesheet" href="icon.css">
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="slide.css">
   <script src="colors.js"></script>
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
-  <title>Document</title>
+  <title>html+css</title>
 </head>
-<body>
- 
+<body style="padding-top:0;">
+  <p>2023.04.17 작성</p>
   <h1><a href="index.html">WEB</a></h1>
   <div id="grid">
     <ol>
@@ -21,6 +22,7 @@
       <li><a href="css.html">CSS</a></li>
       <li><a href="javascript.html">JavaScript</a></li>
       <li><a href="html+css.html" style="color:red; text-decoration:underline;">HTML+CSS활용</a></li>
+      <li><a href="react.html">React</a></li>
     </ol>
     <div id="article">
       <h2>HTML + CSS 활용</h2>
@@ -69,6 +71,42 @@
           <li><a href="#" class="item"><div>추천목록</div></a></li>
           <li><a href="#" class="item"><div>설정</div></a></li>
         </ul>
+      </div>
+      <br><br>
+      <h3>스크립트 없이 만드는 슬라이드 효과</h3>
+      다음은 슬라이드를 만들어본다.<br>
+      역시나 참고 사이트는 유튜브의 "코딩하는 남자"<br><br>
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/JryRu5zby3A" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+      <br><br>
+      <div class="section">
+        <input type="radio" name="slide" id="slide01" checked>
+        <input type="radio" name="slide" id="slide02">
+        <input type="radio" name="slide" id="slide03">
+        <div class="slidewrap">
+          <ul class="slidelist">
+            <li>
+              <a>
+                <label for="slide03" class="left"></label>
+                <img src="Image/slideimg01.png">
+                <label for="slide02" class="right"></label>
+              </a>
+            </li>
+            <li>
+              <a>
+                <label for="slide01" class="left"></label>
+                <img src="Image/slideimg02.png">
+                <label for="slide03" class="right"></label>
+              </a>
+            </li>
+            <li>
+              <a>
+                <label for="slide02" class="left"></label>
+                <img src="Image/slideimg03.png">
+                <label for="slide01" class="right"></label>
+              </a>
+            </li>
+          </ul>
+        </div>
       </div>
 
 

@@ -17,34 +17,33 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>메인페이지</title>
-
+  
   <style>
     a {
       color:black;
       text-decoration: none; /* 텍스트에 적용할 효과 */
     }
-
-  </style>
+    
+    </style>
   <script src="colors.js"></script>
   <link rel="stylesheet" href="icon.css">
+  <title>메인페이지</title>
 </head>
 <body>
   <h2><a style="background: cadetblue; border: crimson;">2023.04.04~</a></h2>
 
   <header>
+    <span><input id="night_day" type="button" value="night" onclick="
+      nightdayHandler(this);
+      "></span>
     <h1><a href="index.html">WEB</a></h1>  
-    <input id="night_day" type="button" value="night" onclick="
-    nightdayHandler(this);
-    ">
-    <nav>
-    </nav>
   </header>
   <ol>
     <li><a href="html.html">HTML</a></li>
     <li><a href="css.html">CSS</a></li>
     <li><a href="javascript.html">JavaScript</a></li>
     <li><a href="html+css.html">HTML+CSS활용</a></li>
+    <li><a href="react.html">React</a></li>
   </ol>
  <!-- 사진 넣는 방법
  <img> 태그 사용 
