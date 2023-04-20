@@ -32,15 +32,14 @@ body{
   margin-bottom:10px;
 }
 .link-pos{
-  position:fixed;
+  position:absolute;
   bottom:20px;
   left:50%;
   transform: translate(-50%);
 }
-
 #dynamic{
   position:relative;
-  display: inline-block;
+  display:   inline-block;
 }
 #dynamic::after{
   content:"";
