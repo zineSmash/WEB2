@@ -17,29 +17,68 @@
   </script>
   <!-- 구글애널리틱스용 스크립트 -->
 
-  <link href="index.css" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" 
-    rel="stylesheet">
-
+  <link href="css/index.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+  <style>
+    body{
+      font-family: 'Press Start 2P", cursive';
+    }  
+  </style>
+  
   <title>커버페이지</title>
 </head>
 <body>
   <div class="wrap">
-    <h1>
-      <span class="material-icons md-48"  style="padding-left: 50px;padding-right:50px;">language</span>
-    </h1>
-    <p id="dynamic" class="lg-text"></p>
-    <p class="sm-text">zine's webpage</p>
-    <p >Click below</p>
+    <h1 class="sm-text" style="font-family: 'Press Start 2P', cursive;font-size: 50px;">zine's world</h1>
+    <br><br>
+    <p id="dynamic" class="lg-text" style="font-family: 'Press Start 2P', cursive;"></p>
+    <br><br>
+    <!-- <p style="margin-bottom: 50px;">Click below</p> -->
+    <p style="margin-top:50px">
+      <div>
+        <span class="material-symbols-outlined" style="font-size: 92px; transform: translate(-30%,30%);" >language</span>
+        <input class="button" id="page_change" type="button" value="Web Study"    
+        onclick="location.href='Html/main.html'"
+        style="width:400px; padding:10px 30px; border-radius: 10px; font-size:30px; font-family: 'Press Start 2P', cursive; padding:50px;"
+        >
+        <span style="position:absolute; transform: translate(-120%, 80%);">2023.04</span>
+      </div>
+      <br>
+      <div>
+        <span class="material-symbols-outlined" style="font-size: 92px; transform: translate(-30%,30%);" >stadia_controller</span>
+        <input class="button" id="page_change" type="button" value="Unity Study"    
+        onclick="location.href='Html/portfolio.html'"
+        style="width:400px; padding:10px 30px; border-radius: 10px; font-size:30px; background-color:goldenrod;font-family: 'Press Start 2P', cursive; "
+        >
+        <span style="position:absolute; transform: translate(-110%, 80%);">2021.05~2021.11</span>
+      </div>
+      <br>
+      <div>
+        <span class="material-symbols-outlined" style="font-size: 92px; transform: translate(-30%,30%);" >business_center</span>
+        <input class="button" id="page_change" type="button" value="Unity Project1"    
+        onclick="location.href='Html/unityproject1.html'"
+        style="width:400px; padding:10px 30px; border-radius: 10px; font-size:25px; background-color:crimson;font-family: 'Press Start 2P', cursive; "
+        >
+        <span style="position:absolute; transform: translate(-110%, 80%);">2022.01~2022.06</span>
+      </div>
+      <br>
+      <div>
+        <span class="material-symbols-outlined" style="font-size: 92px; transform: translate(-30%,30%);" >business_center</span>
+        <input class="button" id="page_change" type="button" value="Unity Project2"    
+        onclick="location.href='Html/unityproject2.html'"
+        style="width:400px; padding:10px 30px; border-radius: 10px; font-size:25px; background-color:crimson;font-family: 'Press Start 2P', cursive; "
+        >
+        <span style="position:absolute; transform: translate(-110%, 80%);">2022.07~</span>
+      </div>
+    </p>
   </div>
-  <p class="link-pos">
-    <a href="main.html" style="font-size: 25px; color:white;">WebStudy</a>
-    <a style="font-size: 25px; color:white;">&nbsp;/&nbsp;</a>
-    <a href="portfolio.html" style="font-size: 25px; color:white;">Unity Portfolio</a>
-  </p>
 
     
 
-  <script src="index.js"></script>
+  <script src="javascript/index.js"></script>
 </body>
 </html>
