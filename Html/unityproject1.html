@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -17,19 +17,41 @@
     </script>
     <!-- 구글애널리틱스용 스크립트 -->
 
-    <link href="../css/index.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="../javascript/colors.js"></script>
+    <style>
+        body{
+            padding-top:0px;
+            background-color: grey;
+            color:white;
+        }
+    </style>
     <title>프로젝트_동화활동</title>
 </head>
-<body  style="padding-top:0px;">
-    <input type="button" value="Home" onclick="location.href='../index.html'" style="margin-top:50px; margin-bottom: 20px; width:200px;height:50px">
+<body>
+    <input type="button" value="Home" onclick="location.href='../index.html'" 
+    style="margin-top:50px; margin-bottom: 20px; width:200px;height:50px; position:fixed;">
     <h1 style="text-align:left;">Unity Project
     </h1>
     <div id="grid">
-    <div id="article">
-
-    </div>
+        <ol style="border-right:1px solid white; border-top: 1px solid white;;">
+            <li><a href="#ar1" style="font:bold;color:white">MRTK 터치 동작 구현</a></li>
+            <li><a href="#ar2" style="font:bold;color:white">MRTK UI NearMenu3x3 오브젝트 영상</a></li>
+            <li><a href="#ar3" style="font:bold;color:white">MRTK 홀로렌즈용 앱</a></li>
+        </ol>
+        <div id="article">
+            <h3 style="margin:0%">
+                <ol style="border:none;">
+                    <li><a name="ar1">MRTK 터치 동작 구현</a></li><br>
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/FzXUWMytf0E" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                    <li><a name="ar2">MRTK UI NearMenu3x3 오브젝트 영상</a></li><br>
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/jgO15K2swNU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                    <li><a name="ar3">MRTK 홀로렌즈용 앱</a></li><br>
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/qZ125mZqo_c" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                    
+                </ol>
+            </h3>
+        </div>
     </div>
 </body>
 </html>
